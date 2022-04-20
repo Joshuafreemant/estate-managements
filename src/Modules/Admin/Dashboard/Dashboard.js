@@ -404,7 +404,7 @@ function Dashboard() {
               <h1 className="ml-6 text-lg mb-6">Recent News</h1>
 
               <table class="w-full text-sm text-left text-gray-500 ">
-                <thead class="text-xs text-gray-700  bg-white dark:text-gray-400">
+                <thead class="text-xs text-gray-700  bg-white">
                   <tr>
 
                     <th scope="col" class="px-6 py-3">
@@ -426,9 +426,9 @@ function Dashboard() {
                 </thead>
                 <tbody>
                   <tr
-                    class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                    class="bg-white border-b">
 
-                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
+                    <th scope="row" class="px-6 py-4 font-medium text-gray-900  whitespace-nowrap">
                       <div className="flex gap-4">
                         <img src={news} alt="" />
                         <div className="flex flex-col">
@@ -453,13 +453,13 @@ function Dashboard() {
                       </div>
                     </td>
                     <td class="px-6 py-4 text-right">
-                      <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">...</a>
+                      <a href="#" class="font-medium text-blue-600  hover:underline">...</a>
                     </td>
                   </tr>
                   <tr
-                    class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                    class="bg-white border-b">
 
-                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
+                    <th scope="row" class="px-6 py-4 font-medium text-gray-900  whitespace-nowrap">
                       <div className="flex gap-4">
                         <img src={news} alt="" />
                         <div className="flex flex-col">
@@ -484,14 +484,14 @@ function Dashboard() {
                       </div>
                     </td>
                     <td class="px-6 py-4 text-right">
-                      <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">...</a>
+                      <a href="#" class="font-medium text-blue-600  hover:underline">...</a>
                     </td>
                   </tr>
 
                   <tr
-                    class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                    class="bg-white border-b">
 
-                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
+                    <th scope="row" class="px-6 py-4 font-medium text-gray-900  whitespace-nowrap">
                       <div className="flex gap-4">
                         <img src={news} alt="" />
                         <div className="flex flex-col">
@@ -516,15 +516,15 @@ function Dashboard() {
                       </div>
                     </td>
                     <td class="px-6 py-4 text-right">
-                      <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">...</a>
+                      <a href="#" class="font-medium text-blue-600  hover:underline">...</a>
                     </td>
                   </tr>
 
 
                   <tr
-                    class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                    class="bg-white border-b">
 
-                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
+                    <th scope="row" class="px-6 py-4 font-medium text-gray-900  whitespace-nowrap">
                       <div className="flex gap-4">
                         <img src={news} alt="" />
                         <div className="flex flex-col">
@@ -549,7 +549,7 @@ function Dashboard() {
                       </div>
                     </td>
                     <td class="px-6 py-4 text-right">
-                      <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">...</a>
+                      <a href="#" class="font-medium text-blue-600  hover:underline">...</a>
                     </td>
                   </tr>
 
