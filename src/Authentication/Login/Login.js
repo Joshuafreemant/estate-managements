@@ -40,7 +40,7 @@ const Login = props => {
 
           <img src={userIcon} alt="" className=" w-12 h-12 absolute top-24" />
         </div>
-        <div className="bg-white p-6">
+        <div className="bg-white p-6 ">
             <LoginForm
                 handleSubmit={handleSubmit}
                 formLoading={isSubmitting}
