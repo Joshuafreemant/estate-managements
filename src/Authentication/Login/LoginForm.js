@@ -49,7 +49,7 @@ const LoginForm = (props) => {
     };
     return (
         <>
-            <form name="login-form mt-12"
+            <form name="login-form"
                   onSubmit={handleSubmit}>
                 {(loginError && loginError.message) ? (
                     <Alert color="danger">{loginError.message}</Alert>

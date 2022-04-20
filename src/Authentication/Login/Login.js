@@ -35,12 +35,12 @@ const Login = props => {
     <div className="w-full bg-white  flex justify-center items-center h-screen">
       <div className="flex flex-col w-3/12 justify-center shad">
         <div className="p-6 bg-top relative">
-          <h4 className="color-theme">Welcome Back !</h4>
+          <h4 className="color-theme">Welcome Backa !</h4>
           <p className="color-theme">Sign in to continue to dashboard</p>
 
           <img src={userIcon} alt="" className=" w-12 h-12 absolute top-24" />
         </div>
-        <div className="bg-white p-6 ">
+        <div className="bg-white p-6 md:mt-12">
             <LoginForm
                 handleSubmit={handleSubmit}
                 formLoading={isSubmitting}
