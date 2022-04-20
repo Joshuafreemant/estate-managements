@@ -1,12 +1,14 @@
 
 
-import { Fragment, useState, useEffect } from "react";
+import { Fragment, useState, useEffect,useRef} from "react";
+
+
 import { Table } from "antd";
 import { TableProps } from "antd/lib/table";
 import { render } from "react-dom";
 
 import { Dialog, Transition } from '@headlessui/react'
-import { RiNotificationLine, RiDashboardLine, RiKeyLine, RiUserLine,RiSearch2Line, RiSecurePaymentLine, RiCalendarLine, RiShape2Line } from 'react-icons/ri';
+import { RiNotificationLine, RiDashboardLine, RiKeyLine, RiUserLine, RiSearch2Line, RiSecurePaymentLine, RiCalendarLine, RiShape2Line } from 'react-icons/ri';
 
 // @ts-ignore
 import reqwest from "reqwest";
@@ -15,6 +17,7 @@ import "antd/dist/antd.css";
 import TopNavbar from "../../../Component/TopNavbar";
 import LeftNavbar from "../../../Component/LeftNavbar";
 import add from '../../../Images/add.png';
+  
 
 
 function Residents() {
@@ -26,7 +29,11 @@ function Residents() {
 
     const [selectedRowKeys, setSelectedRowKeys] = useState([]);
 
+    const [file, setFile] = useState()
+    const [image, setImage] = useState()
 
+    
+    const fileInputRef = useRef()
 
     const customFetch = async (params = {}) => {
         console.log("params:", params);
@@ -161,7 +168,7 @@ function Residents() {
     return (
         <div>
 
-<Transition appear show={isOpen} as={Fragment}>
+            <Transition appear show={isOpen} as={Fragment}>
                 <Dialog
                     as="div"
                     className="fixed inset-0 z-10 overflow-y-auto"
@@ -206,11 +213,29 @@ function Residents() {
                                 </Dialog.Title>
 
                                 <div className="w-12 h-12 rounded-full bg-gray-300">
-                                    <img src={add} alt="" />
+                                    <img src={add} alt="" className="cursor-pointer" onClick={(event) => {
+                            event.preventDefault()
+                            fileInputRef.current.click()
+                        }} />
+
+                                    <input
+                                        type="file"
+                                        style={{ display: 'none' }}
+                                        ref={fileInputRef}
+                                        accept="image/*"
+                                        onChange={(event) => {
+                                            const file = event.target.files[0]
+                                            if (file) {
+                                                setImage(file)
+                                            }
+                                            else {
+                                                setImage(null)
+                                            }
+                                        }} />
                                 </div>
                                 <div className="mt-4">
                                     <form action="">
-                                    <div className="flex gap-2 mt-4">
+                                        <div className="flex gap-2 mt-4">
                                             <div className="flex flex-col w-1/2">
                                                 <label htmlFor="" className="text-xs mb-1">Firstname</label>
                                                 <input type="text" name="" id="" className="border border-gray-200 p-2 focus:outline-none rounded-sm" placeholder="Enter Levy name" />
@@ -303,7 +328,7 @@ function Residents() {
 
                                 <div className="mt-4 flex gap-2">
 
-                            <button className="button-bg py-2 px-3 text-white font-semibold  text-xs  rounded-sm"> Add Resident</button>
+                                    <button className="button-bg py-2 px-3 text-white font-semibold  text-xs  rounded-sm"> Add Resident</button>
 
                                     <button
                                         type="button"
@@ -321,36 +346,36 @@ function Residents() {
 
 
             <div className="flex">
-            <LeftNavbar/>
+                <LeftNavbar />
 
 
                 <div className="w-10/12 flex flex-col  body-bg">
-                <TopNavbar user ='Residents'/>
+                    <TopNavbar user='Residents' />
 
                     <div className="flex justify-between ml-12 w-11/12 items-center mt-8">
-                    <div
-                        className="flex items-center bg-white p-2 mt-8 w-3/12 rounded-2xl px-6 flex items-center"
-                    >
-                        <input
-                            type="text"
-                            name=""
-                            placeholder="search here..."
-                            id=""
-                            className="focus:outline-none bg-transparent w-11/12"
-                        />
+                        <div
+                            className="flex items-center bg-white p-2 mt-8 w-3/12 rounded-2xl px-6 flex items-center"
+                        >
+                            <input
+                                type="text"
+                                name=""
+                                placeholder="search here..."
+                                id=""
+                                className="focus:outline-none bg-transparent w-11/12"
+                            />
 
-<RiSearch2Line/>
+                            <RiSearch2Line />
 
-                    </div>
+                        </div>
 
 
                         <div className="flex gap-4">
                             <button className="flex items-center gap-2 bg-customm py-2 px-3 color-theme font-semibold text-xs  rounded-sm">
-                            <RiCalendarLine />
-                            Date Filter</button>
+                                <RiCalendarLine />
+                                Date Filter</button>
                             <button className="flex items-center gap-2 bg-customm py-2 px-3 color-theme font-semibold text-xs  rounded-sm">
-                            <RiCalendarLine />
-                             Generate Report</button>
+                                <RiCalendarLine />
+                                Generate Report</button>
                             <button onClick={e => openModal(e)} className="button-bg py-2 px-3 text-white font-semibold  text-xs  rounded-sm"> Add New Resident</button>
                         </div>
                     </div>
