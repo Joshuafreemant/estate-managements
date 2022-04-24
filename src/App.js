@@ -16,6 +16,9 @@ import Login from './Authentication/Login/Login';
 import EmailSent from './Component/EmailSent';
 import Reset from './Component/Reset';
 import Apartment from './Modules/Admin/Apartment/Apartment';
+import ApartmentService from './Modules/Admin/Apartment/ApartmentSelect';
+
+import Staff from './Modules/Admin/Staff/Staff';
 import { useEffect } from "react";
 
 
@@ -49,6 +52,10 @@ function ScrollToTopOnMount() {
           <Route exact path="/apartment" element={<Apartment />} />
           <Route exact path="/dash" element={<Dash />} />
           <Route exact path="/dashpayment" element={<DashPayment />} />
+          <Route exact path="/staff" element={<Staff />} />
+          <Route exact path="/apartment-select" element={<ApartmentService />} />
+
+          
         </Routes>
 
     </>

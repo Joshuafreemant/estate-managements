@@ -42,6 +42,10 @@ function Apartment() {
   const [pagination, setPagination] = useState({});
 
   const [selectedRowKeys, setSelectedRowKeys] = useState([]);
+  
+  const [image, setImage] = useState()
+  const fileInputRef = useRef()
+
 
   const customFetch = async (params = {}) => {
     console.log('params:', params);
@@ -303,7 +307,30 @@ function Apartment() {
                 </Dialog.Title>
 
                 <div className="w-12 h-12 bg-gray-300">
-                  <img src={photo} alt="" />
+                  <img src={photo} alt=""
+                   className="cursor-pointer"
+                                        onClick={(event) => {
+                            event.preventDefault()
+                            fileInputRef.current.click()
+                        }}
+                   />
+
+                   
+                   
+<input
+                                        type="file"
+                                        style={{ display: 'none' }}
+                                        ref={fileInputRef}
+                                        accept="image/*"
+                                        onChange={(event) => {
+                                            const file = event.target.files[0]
+                                            if (file) {
+                                                setImage(file)
+                                            }
+                                            else {
+                                                setImage(null)
+                                            }
+                                        }} />
                 </div>
                 <div className="mt-4">
                   <form action="">
