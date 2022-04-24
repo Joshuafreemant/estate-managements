@@ -109,7 +109,7 @@ function Dash() {
                         <img src={puzzle} alt="" className="w-6 h-6" />
 
 
-                        <NavLink className="text-xs font-medium text-gray-700" exact to="/">Staffs </NavLink>
+                        <NavLink className="text-xs font-medium text-gray-700" exact to="/staff">Staffs </NavLink>
 
                     </div>
 

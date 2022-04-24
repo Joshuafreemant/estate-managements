@@ -1,6 +1,6 @@
 
 
-import { Fragment, useState, useEffect } from "react";
+import { Fragment, useState, useEffect,useRef } from "react";
 import { Table } from "antd";
 import { TableProps } from "antd/lib/table";
 import { render } from "react-dom";
@@ -30,6 +30,11 @@ function Payments() {
     let [isOpen, setIsOpen] = useState(false)
     let [isLevy, setIsLevy] = useState(false)
 
+    const [file, setFile] = useState()
+    const [image, setImage] = useState()
+
+    
+    const fileInputRef = useRef()
 
 
     const customFetch = async (params = {}) => {
@@ -250,7 +255,28 @@ function Payments() {
                                 </Dialog.Title>
 
                                 <div className="w-12 h-12 bg-gray-300">
-                                    <img src={photo} alt="" />
+                                    <img src={photo} alt="" 
+                                    className="cursor-pointer"
+                                        onClick={(event) => {
+                            event.preventDefault()
+                            fileInputRef.current.click()
+                        }}
+                                    />
+
+<input
+                                        type="file"
+                                        style={{ display: 'none' }}
+                                        ref={fileInputRef}
+                                        accept="image/*"
+                                        onChange={(event) => {
+                                            const file = event.target.files[0]
+                                            if (file) {
+                                                setImage(file)
+                                            }
+                                            else {
+                                                setImage(null)
+                                            }
+                                        }} />
                                 </div>
                                 <div className="mt-4">
                                     <form action="">
